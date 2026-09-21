@@ -24,6 +24,15 @@ export default function Home() {
       setPlaying(false);
     });
   }, [musicAvailable]);
+  useEffect(() => {
+    if (!musicAvailable) return;
+    const startMusicOnFirstGesture = () => {
+      if (!audio.current) return;
+      audio.current.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+    };
+    window.addEventListener("pointerdown", startMusicOnFirstGesture, { once: true });
+    return () => window.removeEventListener("pointerdown", startMusicOnFirstGesture);
+  }, [musicAvailable]);
   const closeMenu = () => setMenu(false);
   const toggleMusic = async () => {
     if (!audio.current) return;
