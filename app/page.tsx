@@ -26,12 +26,20 @@ export default function Home() {
   }, [musicAvailable]);
   useEffect(() => {
     if (!musicAvailable) return;
-    const startMusicOnFirstGesture = () => {
-      if (!audio.current) return;
-      audio.current.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+    const toggleMusicOnBackgroundTap = (event: PointerEvent) => {
+      const target = event.target as HTMLElement;
+      if (target.closest("button, a, iframe")) return;
+      const audioElement = audio.current;
+      if (!audioElement) return;
+      if (audioElement.paused) {
+        audioElement.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+      } else {
+        audioElement.pause();
+        setPlaying(false);
+      }
     };
-    window.addEventListener("pointerdown", startMusicOnFirstGesture, { once: true });
-    return () => window.removeEventListener("pointerdown", startMusicOnFirstGesture);
+    window.addEventListener("pointerdown", toggleMusicOnBackgroundTap);
+    return () => window.removeEventListener("pointerdown", toggleMusicOnBackgroundTap);
   }, [musicAvailable]);
   const closeMenu = () => setMenu(false);
   const toggleMusic = async () => {
