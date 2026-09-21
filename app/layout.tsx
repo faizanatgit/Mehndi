@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Areeba & Hamza | Mehndi Night",
+  title: "Mehndi",
   description: "You are invited to celebrate our Mehndi Night.",
 };
 
