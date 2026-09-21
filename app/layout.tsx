@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const siteUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000";
+const siteUrl = "https://mehndi-navy.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
