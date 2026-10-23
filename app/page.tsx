@@ -35,7 +35,7 @@ export default function Home() {
     <section id="home" className="hero">
       {videoAvailable && (<video className="hero-video" autoPlay loop muted playsInline poster="/mehndi-botanical-backdrop.webp"><source src="/" type="video/mp4" /></video>)}
       <div className="hero-overlay" /><div className="hero-content">
-        <p className="hero-event">Mehndi</p><p className="hero-late">Haji Master Muhammad Bashir (Late)</p><p className="hero-host">MR. &amp; MRS. MUHAMMAD AZHER BASHIR MALIK</p><p className="hero-copy">CORDIALLY INVITE YOU<br />TO CELEBRATE THE MEHNDI NIGHT<br />OF THEIR BELOVED SON</p>
+        <p className="hero-event">Mehndi</p><p className="hero-late">HAJI MASTER MUHAMMAD BASHIR (LATE)</p><p className="hero-host">MR. &amp; MRS. MUHAMMAD AZHER BASHIR MALIK</p><p className="hero-copy">CORDIALLY INVITE YOU<br />TO CELEBRATE THE MEHNDI NIGHT<br />OF THEIR BELOVED SON</p>
         <h1>Muhammad Zeeshan Azher Malik</h1><p className="program">Programme In-sha-Allah</p><div className="hero-event-details"><p><strong>TIME:</strong> 6:00 PM</p><p><strong>VENUE:</strong> West Canal Road, Farooqabad Mansoorabad</p></div><div className="hero-date"><span /><b>Friday</b><span /></div><p>6th &nbsp;|&nbsp; NOVEMBER &nbsp;|&nbsp; 2026</p><p className="hero-family">ALL BROTHERS, SISTERS AND COUSINS</p>
       </div><a className="scroll-cue" href="#countdown">&darr;<small>Scroll to discover</small></a>
       <audio ref={audio} autoPlay loop preload="auto" src="/Asma-ul-Husna.mp3" onEnded={() => setPlaying(false)} />
